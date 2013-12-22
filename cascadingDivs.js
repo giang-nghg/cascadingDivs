@@ -59,13 +59,22 @@ jQuery.prototype.cascadingDivs = function(options) {
             return;
         }
         
-        // Slide left/right divs, depending on which side of this div the currently selected one is on
+        // Prepare some vars
         var slideAmount = clickedDiv.width() - collapsedWidth;
         var prevDiv = clickedDiv.prev();
         var nextDiv = clickedDiv.next();         
+        
+        // Slide left/right divs, depending on which side of this div the currently selected one is on        
+        // If currently selected div is on the left
         if (prevDiv.hasClass(CASCADE_DIV_CLASS) && !prevDiv.hasClass(SLIDED_DIV_CLASS)) {
-            slideDiv(prevDiv, slideAmount);                    
+        
+            // Slide all divs on the left including the currently selected
+            slideDiv(prevDiv, slideAmount);            
+            
+        // If currently selected div is on the right
         } else if (nextDiv.hasClass(CASCADE_DIV_CLASS) && clickedDiv.hasClass(SLIDED_DIV_CLASS)) {
+        
+            // Unslide this div + all divs on the right except the currently selected
             unslideDiv(clickedDiv, slideAmount);
         }
         
@@ -117,13 +126,16 @@ function unslideDiv(div, amount) {
 
 function repositionDiv(div, amount) {
     // Move this div
+    // Get the current position
     var currentPos = div.css('left');
+    // Do some string processing
     currentPos = currentPos.replace('px','');
     if (currentPos == '') {
         currentPos = 0;
     } else {
         currentPos = Number(currentPos);
     }    
+    // Change current position
     div.css('left', (currentPos+amount)+'px');
     
     // Prevent selecting another div while this one is sliding
