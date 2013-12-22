@@ -1,0 +1,76 @@
+<script type="text/javascript" src="../jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../cascadingDivs.js"></script>
+
+<script>
+jQuery(function(){
+    jQuery('#banners').cascadingDivs();
+});
+</script>
+
+<style>
+#banners
+{
+    width: 1024px;
+}
+.banner
+{
+    width: 690px;
+    height: 480px;   
+    cursor: pointer;
+}
+#banner-red
+{
+    background: url(output_io4k29.gif) no-repeat;
+}
+#banner-green
+{
+    background: url(green_banner.jpg) no-repeat; 
+}
+#banner-blue
+{
+    background: url(blue_banner.jpg) no-repeat;
+}
+.banner-buttons-row
+{
+    margin-top: 400px;
+    text-align: center;
+}
+.banner-button
+{
+    display: inline-block;
+    margin-right: 50px;
+}
+</style>
+
+<div id="banners">
+    <div id="banner-red" class="banner">
+        <div class="banner-buttons-row">
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+        </div>
+    </div>
+    <div id="banner-green" class="banner">
+        <div class="banner-buttons-row">
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+        </div>
+    </div>
+    <div id="banner-blue" class="banner">
+        <div class="banner-buttons-row">
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+            <div class="banner-button">
+                <button>Click here</button>
+            </div>
+        </div>
+    </div>
+</div>
