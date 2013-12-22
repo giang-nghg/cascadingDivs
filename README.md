@@ -10,6 +10,7 @@ Sample usage:
 - Wrap your contents in <div> blocks (or any kind of html element, if you like to live dangerously)
 - Call the plugin
 
+
     <script>
     $(function() {
         $('#cascade-div-container').cascadingDivs();
