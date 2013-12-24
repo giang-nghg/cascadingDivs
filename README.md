@@ -1,3 +1,5 @@
+WILL UPDATE SOON, GOT INTERNET PROBLEM
+
 Demos: (I will upload an online version soon)
 
 - Simple text paragraphs demo: text-sample/index.html
